@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - Login</title>
+    <meta name="description" content="SkillBridge web portal - Connect with micro-mentors for focused learning sessions">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <!-- Logo and Branding -->
+            <div class="brand-section">
+                <div class="logo">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#3B82F6"/>
+                        <path d="M16 20L24 28L32 20" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 28L24 36L32 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="brand-title">SkillBridge</h1>
+                <p class="brand-subtitle">Connect. Learn. Grow.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to access your personalized learning dashboard</p>
+                </div>
+
+                <!-- Error Message Container -->
+                <div class="error-container" id="errorContainer" role="alert" aria-live="polite" style="display: none;">
+                    <svg class="error-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 1L15 15H1L8 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 6V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8 12H8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span id="errorMessage"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        required 
+                        autocomplete="email"
+                        aria-describedby="email-error"
+                        placeholder="Enter your email address"
+                    >
+                    <div class="field-error" id="email-error" role="alert"></div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="password-input-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            required 
+                            autocomplete="current-password"
+                            aria-describedby="password-error"
+                            placeholder="Enter your password"
+                        >
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M1 10s4-8 9-8 9 8 9 8-4 8-9 8-9-8-9-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="field-error" id="password-error" role="alert"></div>
+                </div>
+
+                <!-- OTP Field (Optional) -->
+                <div class="form-group" id="otpGroup" style="display: none;">
+                    <label for="otp" class="form-label">
+                        One-Time Password (OTP)
+                        <span class="optional-label">Optional</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="otp" 
+                        name="otp" 
+                        class="form-input" 
+                        autocomplete="one-time-code"
+                        aria-describedby="otp-error"
+                        placeholder="Enter 6-digit OTP if required"
+                        maxlength="6"
+                        pattern="[0-9]{6}"
+                    >
+                    <div class="field-error" id="otp-error" role="alert"></div>
+                </div>
+
+                <!-- Remember Me and Forgot Password -->
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="loading-spinner" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.22 4.22L6.34 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M13.66 13.66L15.78 15.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M2 10H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 10H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.22 15.78L6.34 13.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M13.66 6.34L15.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Additional Options -->
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+                    <button type="button" class="otp-toggle" id="otpToggle">Need OTP? Click here</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Background Design -->
+        <div class="background-design">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
