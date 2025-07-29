@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SkillBridge</title>
+    <meta name="description" content="SkillBridge Dashboard - Your personalized learning hub">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#3B82F6"/>
+                        <path d="M16 20L24 28L32 20" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 28L24 36L32 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="brand-name">SkillBridge</span>
+            </div>
+
+            <div class="nav-menu">
+                <a href="#mentorship" class="nav-link">Mentorship</a>
+                <a href="#goals" class="nav-link">Learning Goals</a>
+                <a href="#policies" class="nav-link">Policies</a>
+                <a href="#progress" class="nav-link">Progress</a>
+            </div>
+
+            <div class="nav-profile">
+                <button class="notification-btn" aria-label="Notifications">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2C6.69 2 4 4.69 4 8c0 2.5-1.5 3.5-2 5h16c-.5-1.5-2-2.5-2-5 0-3.31-2.69-6-6-6z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 17s1 1 2 1 2-1 2-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <div class="profile-dropdown">
+                    <button class="profile-btn" aria-label="Profile menu" aria-haspopup="true">
+                        <div class="profile-avatar" id="userAvatar">
+                            <span id="userInitials">JD</span>
+                        </div>
+                        <span class="profile-name" id="userName">John Doe</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <a href="#profile" class="dropdown-item">Profile Settings</a>
+                        <a href="#preferences" class="dropdown-item">Preferences</a>
+                        <hr class="dropdown-divider">
+                        <button class="dropdown-item logout-btn" id="logoutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 class="welcome-title" id="welcomeMessage">Good morning, John!</h1>
+                    <p class="welcome-subtitle" id="welcomeSubtitle">Welcome back to your learning journey. Let's continue building your skills today.</p>
+                    <div class="welcome-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Sessions This Week</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89%</span>
+                            <span class="stat-label">Goal Progress</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Skills Learned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SkillBridge Introduction -->
+        <section class="skillbridge-intro">
+            <div class="container">
+                <div class="intro-card">
+                    <div class="intro-header">
+                        <h2>About SkillBridge</h2>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="intro-icon">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="intro-description">
+                        SkillBridge is a web-based platform that connects users with micro-mentors (experienced professionals or AI agents) for short, focused sessions. It uses AI to match users with mentors based on skill needs, availability, and learning goals.
+                    </p>
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 2L13 8L19 9L14.5 13.5L15.5 19.5L10 16.5L4.5 19.5L5.5 13.5L1 9L7 8L10 2Z" fill="currentColor"/>
+                            </svg>
+                            <span>AI-Powered Matching</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Flexible Scheduling</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16 4H4C2.9 4 2 4.9 2 6v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 8L10 11L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Expert Mentors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start Guide -->
+        <section class="quickstart-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Quick Start Guide</h2>
+                    <p>Get up to speed quickly with these essential steps</p>
+                </div>
+                
+                <div class="quickstart-tabs">
+                    <button class="tab-btn active" data-tab="new-joiners">New Joiners</button>
+                    <button class="tab-btn" data-tab="genc">GenC Members</button>
+                </div>
+
+                <div class="tab-content active" id="new-joiners">
+                    <div class="quickstart-grid">
+                        <div class="quickstart-card">
+                            <div class="card-number">1</div>
+                            <h3>Complete Your Profile</h3>
+                            <p>Add your skills, interests, and learning goals to get personalized mentor recommendations.</p>
+                            <a href="#profile" class="card-action">Complete Profile →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">2</div>
+                            <h3>Explore Mentorship</h3>
+                            <p>Browse available mentors and schedule your first learning session.</p>
+                            <a href="#mentorship" class="card-action">Find Mentors →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">3</div>
+                            <h3>Set Learning Goals</h3>
+                            <p>Define what you want to achieve and track your progress over time.</p>
+                            <a href="#goals" class="card-action">Set Goals →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">4</div>
+                            <h3>Join Communities</h3>
+                            <p>Connect with peers and participate in skill-building discussions.</p>
+                            <a href="#communities" class="card-action">Join Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="genc">
+                    <div class="quickstart-grid">
+                        <div class="quickstart-card">
+                            <div class="card-number">1</div>
+                            <h3>Access GenC Resources</h3>
+                            <p>Explore specialized content and mentorship programs designed for GenC members.</p>
+                            <a href="#genc-resources" class="card-action">View Resources →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">2</div>
+                            <h3>Fast-Track Learning</h3>
+                            <p>Use advanced learning paths tailored to your experience level.</p>
+                            <a href="#advanced-paths" class="card-action">Start Learning →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">3</div>
+                            <h3>Mentor Others</h3>
+                            <p>Share your expertise by becoming a mentor for junior members.</p>
+                            <a href="#become-mentor" class="card-action">Become Mentor →</a>
+                        </div>
+                        <div class="quickstart-card">
+                            <div class="card-number">4</div>
+                            <h3>Leadership Track</h3>
+                            <p>Access leadership development programs and advanced skill modules.</p>
+                            <a href="#leadership" class="card-action">Explore Track →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Cards -->
+        <section class="navigation-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What would you like to do today?</h2>
+                    <p>Quick access to your most important tools and features</p>
+                </div>
+
+                <div class="nav-cards-grid">
+                    <a href="#mentorship" class="nav-card">
+                        <div class="nav-card-icon mentorship">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4C13.7909 4 12 5.79086 12 8C12 10.2091 13.7909 12 16 12C18.2091 12 20 10.2091 20 8C20 5.79086 18.2091 4 16 4Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 6C6.34315 6 5 7.34315 5 9C5 10.6569 6.34315 12 8 12C9.65685 12 11 10.6569 11 9C11 7.34315 9.65685 6 8 6Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 6C22.3431 6 21 7.34315 21 9C21 10.6569 22.3431 12 24 12C25.6569 12 27 10.6569 27 9C27 7.34315 25.6569 6 24 6Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 16C12.6863 16 10 18.6863 10 22V28H22V22C22 18.6863 19.3137 16 16 16Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 15C5.79086 15 4 16.7909 4 19V25H8V19C8 18.5 8.1 18.01 8.28 17.56" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 15C26.2091 15 28 16.7909 28 19V25H24V19C24 18.5 23.9 18.01 23.72 17.56" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>Explore Mentorship Sessions</h3>
+                            <p>Find mentors, schedule sessions, and accelerate your learning journey</p>
+                            <span class="nav-card-badge">3 new matches</span>
+                        </div>
+                    </a>
+
+                    <a href="#goals" class="nav-card">
+                        <div class="nav-card-icon goals">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>View Learning Goals</h3>
+                            <p>Track your progress and set new objectives for continuous growth</p>
+                            <span class="nav-card-badge">89% complete</span>
+                        </div>
+                    </a>
+
+                    <a href="#policies" class="nav-card">
+                        <div class="nav-card-icon policies">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M6 8V26C6 27.1046 6.89543 28 8 28H24C25.1046 28 26 27.1046 26 26V10L20 4H8C6.89543 4 6 4.89543 6 8Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 4V10H26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 16H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M10 20H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M10 24H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>Access Organizational Policies</h3>
+                            <p>Review guidelines, code of conduct, and platform policies</p>
+                            <span class="nav-card-badge">Updated</span>
+                        </div>
+                    </a>
+
+                    <a href="#progress" class="nav-card">
+                        <div class="nav-card-icon progress">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M4 16H28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 4V28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M21 9L27 15L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11 11L5 17L11 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>Track Progress & Feedback</h3>
+                            <p>Monitor your learning analytics and review mentor feedback</p>
+                            <span class="nav-card-badge">New feedback</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SkillBridge</h4>
+                    <p>Connecting learners with expert mentors for accelerated growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#support">Contact Support</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#api">API Documentation</a></li>
+                        <li><a href="#status">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

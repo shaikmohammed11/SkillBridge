@@ -1,0 +1,43 @@
+{
+  "name": "skillbridge-portal",
+  "version": "1.0.0",
+  "description": "A modern, responsive web portal connecting users with micro-mentors for focused learning sessions",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/index.html",
+    "serve": "http-server -p 8000 -o",
+    "validate": "html-validate *.html",
+    "format": "prettier --write \"**/*.{html,css,js,md}\"",
+    "lint": "eslint *.js"
+  },
+  "keywords": [
+    "mentorship",
+    "learning",
+    "education",
+    "web-portal",
+    "accessibility",
+    "responsive"
+  ],
+  "author": "SkillBridge Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skillbridge/portal.git"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.0",
+    "eslint": "^8.50.0",
+    "html-validate": "^8.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
